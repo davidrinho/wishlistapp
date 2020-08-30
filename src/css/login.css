@@ -1,0 +1,57 @@
+html {
+    font-family: 'B612', sans-serif;
+    background-color: #4287f5;
+}
+
+/* #root {
+    align-items: center;
+    display: flex;
+} */
+
+.containerDiv {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    margin-top: 30vh;
+}
+
+.loginDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginDiv input {
+    margin-bottom: 20px;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.loginDiv label {
+    text-align: left;
+}
+
+button {
+    height: 40px;
+    background-color: #4287f5;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    font-family: 'B612', sans-serif;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+}

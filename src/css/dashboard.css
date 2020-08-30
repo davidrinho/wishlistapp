@@ -1,0 +1,87 @@
+.dashboardNav {
+    flex: 1;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: #4287f5;
+}
+
+
+.dashboardNav button {
+    margin: 0 5px 0 5px;
+    width: 25vw;
+}
+
+.activeTab {
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.listViewer {
+    margin-top: 10px;
+    width: 75vh;
+    margin: auto;
+}
+
+.wishListDiv {
+    text-align: center;
+    overflow: scroll;
+    height: 50vh;
+    margin: 10px 0 10px 0;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+.faIcon {
+    margin-right: 20px;
+}
+
+.hiddenList {
+    height: 3vh;
+    overflow: hidden;
+}
+
+.listItem {
+    margin: 10px;
+}
+
+.listHeader {
+    background-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+.listHeader span {
+    margin-left: 20px;
+    font-size: 1.2rem;
+    color: #4287f5;
+}
+
+.listBody {
+}
+
+li {
+    margin: 2px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.done {
+    text-decoration: line-through;
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .listViewer {
+        width: auto;
+    }
+}
