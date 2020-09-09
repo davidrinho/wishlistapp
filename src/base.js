@@ -32,7 +32,7 @@ const firebaseConfig = {
       async registerUser(email, password) {
         await this.auth.createUserWithEmailAndPassword(email, password);
         return this.auth.currentUser.updateProfile({
-            displayName: 'test'
+            displayName: email.split("@")[0]
         });
       }
 
@@ -46,6 +46,30 @@ const firebaseConfig = {
           status: status
         });
       }
+
+      updateBoughtBy(person, item) {
+        return this.db.ref('lists/' + person + '/' + item).update({
+          boughtBy: this.auth.currentUser.displayName        
+        })
+      }
+
+      removeBoughtBy(person, item) {
+        return this.db.ref('lists/' + person + '/' + item + "/boughtBy").remove()
+          .then(() => {
+            console.log("Removed successfully!");
+          })
+          .catch((error) => {
+            console.log("Remove failed: " + error.message);
+          });
+      }
+
+      addItem(person, item) {
+        return this.db.ref('lists/' + person).update({
+          [item] : {
+            status: "notdone"
+          }
+        })
+      } 
 
 
 

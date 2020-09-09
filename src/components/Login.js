@@ -18,6 +18,15 @@ const Login = (props) => {
         }    
     }
 
+    const register = async () => {
+        try {
+            await Firebase.registerUser(email, password);
+            props.history.push('/dashboard');
+        } catch (error) {
+            alert(error.message);
+        }
+    }
+
     return (
         <div className="containerDiv">
             <div className="loginDiv">
@@ -26,6 +35,7 @@ const Login = (props) => {
                 <label>Password:</label>
                 <input type="password" onChange={e => setPassword(e.target.value)} />
                 <button onClick={() => signIn()}>Sign in</button>
+                <button onClick={() => register()}>Register</button>
             </div>
         </div>
         )

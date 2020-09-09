@@ -4,7 +4,7 @@
     width: 100vw;
     align-items: center;
     justify-content: center;
-    background-color: #4287f5;
+    background-color: #B3000C;
 }
 
 
@@ -19,7 +19,8 @@
 
 .listViewer {
     margin-top: 10px;
-    width: 75vh;
+    --containerWidth: 75vh;
+    width: var(--containerWidth);
     margin: auto;
 }
 
@@ -34,7 +35,8 @@
 }
 
 .faIcon {
-    margin-right: 20px;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
 }
 
 .hiddenList {
@@ -47,28 +49,40 @@
 }
 
 .listHeader {
-    background-color: #FFFFFF;
-    border-radius: 2px;
+    display: flex;
+    height: 5vh;
+    border-bottom: 1px solid #014a13;
 }
 
 .listHeader span {
-    margin-left: 20px;
-    font-size: 1.2rem;
-    color: #4287f5;
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    margin: auto;
+    flex: 1;  
 }
 
 .listBody {
+    background-color: #014a13;
+    border-radius: 3px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 li {
     margin: 2px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(0,0,0,0.2)
 }
 
 .done {
     text-decoration: line-through;
-    color: red;
+    color: #E40010;
 }
 
 .hidden {
@@ -80,8 +94,83 @@ li {
 }
 
 
+/* Bottombar */
+.bottomBar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+
+.addItemIcon:hover {
+    color: white;
+}
+
+
+#itemInput {
+    height: 1.7rem;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 2px 2px rgba(0,0,0, 0.5);
+    font-family: inherit;
+    text-align: center;
+}
+
+
+.addItemIcon {
+    -moz-transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    transition: all .5s linear;
+}
+
+.down {
+    -webkit-animation: spinGift 0.2s ;
+    -moz-animation: spinGift 0.2s;
+    animation: spinGift 0.2s;
+    animation-fill-mode: forwards;
+}
+
+
 @media only screen and (max-width: 600px) {
     .listViewer {
         width: auto;
+        padding: 20px 20px 10px 20px;
     }
 }
+
+.clickedArrow {
+    -webkit-animation: spinArrow 0.2s ;
+    -moz-animation: spinArrow 0.2s;
+    animation: spinArrow 0.2s;
+    animation-fill-mode: forwards;
+}
+
+
+@-moz-keyframes spinArrow { 100% {-moz-transform: rotate(180deg);}}
+@-webkit-keyframes spinArrow { 100% {-webkit-transform: rotate(180deg);}}
+@keyframes spinArrow { 100% {transform: rotate(180deg);}}
+
+
+@-ms-keyframes spinGift {
+    50% {color: red}
+    100% {
+        color: #014a13;
+        transform: rotate(360deg);}}
+@-moz-keyframes spinGift {
+    50% {color: red}
+    100% {
+        color: #014a13;
+        transform: rotate(360deg);}}
+@-webkit-keyframes spinGift {
+    50% {color: red}
+    100% {
+        color: #014a13;
+        transform: rotate(360deg);}}
+@keyframes spinGift {
+    50% {color: red}
+    100% {
+        color: #014a13;
+        transform: rotate(360deg);}}
