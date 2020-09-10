@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Login}/>
-        <Route exact path="/dashboard" component={Dashboard}/>
+        <Route path={process.env.PUBLIC_URL + '/'} component={Login}/>
+        <Route path={process.env.PUBLIC_URL + "/dashboard"} component={Dashboard}/>
       </Switch>
     </Router>
   );
