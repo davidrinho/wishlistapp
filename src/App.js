@@ -6,10 +6,10 @@ import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <Router>
+    <Router basename={`${process.env.PUBLIC_URL}/`}>
       <Switch>
-        <Route path={process.env.PUBLIC_URL + '/'} component={Login}/>
-        <Route path={process.env.PUBLIC_URL + "/dashboard"} component={Dashboard}/>
+        <Route exact path='/' component={Login}/>
+        <Route exact path="/dashboard" component={Dashboard}/>
       </Switch>
     </Router>
   );

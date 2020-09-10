@@ -35,7 +35,7 @@ const Login = (props) => {
                 <label>Password:</label>
                 <input type="password" onChange={e => setPassword(e.target.value)} />
                 <button onClick={() => signIn()}>Sign in</button>
-                <button onClick={() => register()}>Register</button>
+                <button style={{display: 'none'}} onClick={() => register()}>Register</button>
             </div>
         </div>
         )

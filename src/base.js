@@ -1,18 +1,5 @@
 import firebase from 'firebase';
-
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAmnA4lNTDaTJ4_N5JUR3B-mP6h8jU7P7Q",
-    authDomain: "wishlist-9bddd.firebaseapp.com",
-    databaseURL: "https://wishlist-9bddd.firebaseio.com",
-    projectId: "wishlist-9bddd",
-    storageBucket: "wishlist-9bddd.appspot.com",
-    messagingSenderId: "929548929948",
-    appId: "1:929548929948:web:67fccbbd075ae701fc5659"
-  };
-
-
+import firebaseConfig from './config';
 
 
   class Firebase {
