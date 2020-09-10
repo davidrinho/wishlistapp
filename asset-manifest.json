@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/WishListApp/static/css/main.a4bc8624.chunk.css",
-    "main.js": "/WishListApp/static/js/main.97b0c63c.chunk.js",
-    "main.js.map": "/WishListApp/static/js/main.97b0c63c.chunk.js.map",
+    "main.js": "/WishListApp/static/js/main.40836430.chunk.js",
+    "main.js.map": "/WishListApp/static/js/main.40836430.chunk.js.map",
     "runtime-main.js": "/WishListApp/static/js/runtime-main.f78bbc2b.js",
     "runtime-main.js.map": "/WishListApp/static/js/runtime-main.f78bbc2b.js.map",
     "static/js/2.f512ff8f.chunk.js": "/WishListApp/static/js/2.f512ff8f.chunk.js",
     "static/js/2.f512ff8f.chunk.js.map": "/WishListApp/static/js/2.f512ff8f.chunk.js.map",
     "index.html": "/WishListApp/index.html",
-    "precache-manifest.3ec2c3420cd9c53444bd515e58596b29.js": "/WishListApp/precache-manifest.3ec2c3420cd9c53444bd515e58596b29.js",
+    "precache-manifest.8bbb0a7c65e400c0223c00a1d448c0c7.js": "/WishListApp/precache-manifest.8bbb0a7c65e400c0223c00a1d448c0c7.js",
     "service-worker.js": "/WishListApp/service-worker.js",
     "static/css/main.a4bc8624.chunk.css.map": "/WishListApp/static/css/main.a4bc8624.chunk.css.map",
     "static/js/2.f512ff8f.chunk.js.LICENSE.txt": "/WishListApp/static/js/2.f512ff8f.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f78bbc2b.js",
     "static/js/2.f512ff8f.chunk.js",
     "static/css/main.a4bc8624.chunk.css",
-    "static/js/main.97b0c63c.chunk.js"
+    "static/js/main.40836430.chunk.js"
   ]
 }
