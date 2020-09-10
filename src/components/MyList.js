@@ -1,10 +1,16 @@
 import React from 'react';
 import AddItem from './AddItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGift, faCandyCane } from '@fortawesome/free-solid-svg-icons'
+import { faCandyCane, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import Firebase from '../base';
 
 const MyList = ({listObject}) => {
-    if (listObject !== null){
+    const removeItem = (element) => {
+        let item = element.previousSibling.nodeValue;
+        Firebase.removeItem(Firebase.auth.currentUser.displayName, item);
+    }
+
+    if (listObject !== undefined && listObject !== null){
         return (
             <div className="myListContainer" style={{alignContent: 'center', marginTop: '20px'}}>
                 <div className="listBody">
@@ -14,11 +20,21 @@ const MyList = ({listObject}) => {
                         <li                      
                         key={item + "_" + index}>
                             <FontAwesomeIcon
+                                key={item + "_Gifticon_" + index}
                                 style={{marginRight: '20px'}}
                                 size={"lg"}
                                 icon={faCandyCane}
-                                color={"#E40010"} />{
-                            item}</li>
+                                color={"#E40010"} />
+                            {item}
+                            <FontAwesomeIcon
+                                className="removeIcon"
+                                onClick={e => removeItem(e.currentTarget)}
+                                key={item + "_Removeicon_" + index}
+                                size={"1x"}
+                                icon={faTimesCircle}
+                                color={"#E40010"}
+                                style={{float: "right", padding: "1px"}} />
+                            </li>
                     )
                 })}
                 </ul>
@@ -29,7 +45,10 @@ const MyList = ({listObject}) => {
         )
     } else {
         return (
-            <h1>Du har inte önskat dig något ännu :)</h1>
+            <div className="myListContainer" style={{alignContent: 'center', marginTop: '20px'}}>
+                <h1>Du har inte önskat dig något ännu :)</h1>
+                <AddItem />
+            </div>
         )
     }
 }

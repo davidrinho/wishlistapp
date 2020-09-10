@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faGift, faCandyCane } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faGift, faCandyCane, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 import Firebase from '../base';
 
 import MyList from './MyList';
@@ -15,13 +15,16 @@ const Dashboard = (props) => {
     const [otherLists, setOtherLists] = useState(null);
 
 
+    const signOut = () => {
+        Firebase.signOut();
+        props.history.push('/');
+    }
+
     const fetchData = async () => {
         Firebase.ref.on('value', querySnapShot => {
             let data = querySnapShot.val() ? querySnapShot.val() : {};
             let items = {...data};
             setOtherLists(items);
-            console.log(items);
-            console.log(Firebase.auth.currentUser.displayName);
             setMyList(items[Firebase.auth.currentUser.displayName]);
         })
     }
@@ -29,33 +32,44 @@ const Dashboard = (props) => {
     useEffect(() => {
         fetchData();      
     }, []);
-    // if(!Firebase.getCurrentUsername()) {
-    //     // Not signed in
-    //     alert("Please login first!");
-    //     props.history.push('/');
-    // }
-
-    return (
-        <div>
-            <div className="dashboardNav">
-                <button 
-                    id="myListTab"
-                    onClick={e => setActiveTab(e.target.id)}
-                    className={activeTab === 'myListTab' ? 'activeTab' : null}>
-                    Min lista
-                </button>
-                <button 
-                    id="othersListTab"
-                    onClick={e => setActiveTab(e.target.id)}
-                    className={activeTab === 'othersListTab' ? 'activeTab' : null}>
-                    Andras listor
-                </button>
+    if(!Firebase.getCurrentUsername()) {
+        //Not signed in
+        alert("Please login first!");
+        props.history.push('/');
+    }
+    if  (otherLists !== null && otherLists !== undefined) {
+        return (
+            <div>
+                <div className="dashboardNav">
+                    <button 
+                        id="myListTab"
+                        onClick={e => setActiveTab(e.target.id)}
+                        className={activeTab === 'myListTab' ? 'activeTab' : null}>
+                        Min lista
+                    </button>
+                    <button 
+                        id="othersListTab"
+                        onClick={e => setActiveTab(e.target.id)}
+                        className={activeTab === 'othersListTab' ? 'activeTab' : null}>
+                        Andras listor
+                    </button>
+                    <button
+                        style={{width: '20vw', margin: 0, fontSize: '0.5rem', position: 'absolute', right: '5%'}}
+                        id="signOut"
+                        onClick={() => signOut()}>
+                        Logga ut
+                    </button>
+                </div>
+                <div className="listViewer">
+                    {activeTab === 'myListTab' ? <MyList listObject={myList} /> : <OthersList listObject={otherLists} />}
+                </div>
             </div>
-            <div className="listViewer">
-                {activeTab === 'myListTab' ? <MyList listObject={myList} /> : <OthersList listObject={otherLists} />}
-            </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <div><h1>Loading...</h1></div>
+        )
+    }
 }
 
 

@@ -29,6 +29,10 @@ const firebaseConfig = {
           return this.auth.signInWithEmailAndPassword(email, password);
       }
 
+      signOut() {
+        return this.auth.signOut();
+      }
+
       async registerUser(email, password) {
         await this.auth.createUserWithEmailAndPassword(email, password);
         return this.auth.currentUser.updateProfile({
@@ -69,7 +73,18 @@ const firebaseConfig = {
             status: "notdone"
           }
         })
-      } 
+      }
+
+      removeItem(person, item) {
+        console.log(item)
+        return this.db.ref('lists/' + person + '/' + item).remove()
+          .then(() => {
+            console.log(`Successfully removed ${item}!`);
+          })
+          .catch((error) => {
+            console.log(`Could not remove ${item}: ${error.message}`)
+          })
+      }
 
 
 

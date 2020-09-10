@@ -126,6 +126,10 @@ li {
     transition: all .5s linear;
 }
 
+.removeIcon:hover {
+    color: #FFFFFF;
+}
+
 .down {
     -webkit-animation: spinGift 0.2s ;
     -moz-animation: spinGift 0.2s;

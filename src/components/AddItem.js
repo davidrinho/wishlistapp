@@ -15,6 +15,7 @@ const AddItem = () => {
         setTimeout(() => {
             addIcon.classList.toggle('down')
         }, 1000)
+        itemInput.value = '';
         
 
     } 
