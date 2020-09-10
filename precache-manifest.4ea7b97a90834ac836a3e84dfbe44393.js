@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "134fa759498dbb3e41c5497e676a77d1",
+    "revision": "39d6e5b15db962bfa5a4a3ab347248b4",
     "url": "/wishlistapp/index.html"
   },
   {
-    "revision": "bd30fe591a958ad54b62",
-    "url": "/wishlistapp/static/css/main.a4bc8624.chunk.css"
+    "revision": "67b74c9979689e31a4af",
+    "url": "/wishlistapp/static/css/main.227cb1d5.chunk.css"
   },
   {
     "revision": "3cd6cebe0cbbd2b9fdb6",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wishlistapp/static/js/2.6c3e6d03.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bd30fe591a958ad54b62",
-    "url": "/wishlistapp/static/js/main.f14368aa.chunk.js"
+    "revision": "67b74c9979689e31a4af",
+    "url": "/wishlistapp/static/js/main.0bc650d6.chunk.js"
   },
   {
     "revision": "f09385d27f10115f01b5",
