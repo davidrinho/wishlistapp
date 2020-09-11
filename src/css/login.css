@@ -31,9 +31,13 @@ body {
 }
 
 .loginDiv {
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    width: 50vw;
+    overflow: hidden;
+    background-color: #ecf0f1;
+    box-shadow: 0px 0px 1px 5px rgba(0,0,0, 0.1);
 }
 
 .loginDiv input {
@@ -43,6 +47,12 @@ body {
     border: none;
     border-bottom: 1px solid black;
     color: #014a13;
+}
+
+.loginHeader {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 input:focus {
@@ -55,7 +65,7 @@ button:focus {
 
 .loginDiv label {
     text-align: left;
-    color: #FFFFFF;
+    color: #B3000C;
 }
 
 button {
@@ -69,11 +79,15 @@ button {
 }
 
 .loginDiv button {
-    box-shadow: 5px 5px rgba(0,0,0, 0.5);
-    background-color: #018a23;
-    border-radius: 5px;
+    display: block;
+    background-color: #B3000C;
+    width: 100%;
+    margin: 0;
 }
 
 @media only screen and (max-width: 600px) {
-
+    .loginDiv {
+        width: 70vw;
+        width: 70vw;
+    }
 }

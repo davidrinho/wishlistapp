@@ -16,14 +16,12 @@ const AddItem = () => {
             addIcon.classList.toggle('down')
         }, 1000)
         itemInput.value = '';
-        
-
     } 
 
 
     return (
         <div className="bottomBar">          
-            <div onClick={() => addToList()}>               
+            <div id="addDiv" onClick={() => addToList()}>               
                 <FontAwesomeIcon id="addItemGiftIcon" className="addItemIcon" color={"#014a13"} size="5x" icon={faGift} />
                 <h3 id="addItemtext" style={{color: "#FFFFFF", marginTop: '0px'}}>Lägg till</h3>
             </div>

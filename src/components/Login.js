@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Firebase from '../base';
 import '../css/login.css';
 
@@ -30,11 +30,13 @@ const Login = (props) => {
     return (
         <div className="containerDiv">
             <div className="loginDiv">
-                <label>Email:</label>
-                <input onChange={e => setEmail(e.target.value)} />
-                <label>Password:</label>
-                <input type="password" onChange={e => setPassword(e.target.value)} />
-                <button onClick={() => signIn()}>Sign in</button>
+                <div className="loginHeader">
+                    <label>Email:</label>
+                    <input onChange={e => setEmail(e.target.value)} />
+                    <label>Password:</label>
+                    <input type="password" onChange={e => setPassword(e.target.value)} />
+                </div>
+                <button type="submit" onClick={() => signIn()}>Sign in</button>
                 <button style={{display: 'none'}} onClick={() => register()}>Register</button>
             </div>
         </div>

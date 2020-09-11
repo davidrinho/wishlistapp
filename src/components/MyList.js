@@ -46,7 +46,7 @@ const MyList = ({listObject}) => {
     } else {
         return (
             <div className="myListContainer" style={{alignContent: 'center', marginTop: '20px'}}>
-                <h1>Du har inte önskat dig något ännu :)</h1>
+                <h1 style={{textAlign: 'center'}}>Du har inte önskat dig något ännu :)</h1>
                 <AddItem />
             </div>
         )
