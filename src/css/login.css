@@ -12,12 +12,17 @@ Color theme:
 html {
     font-family: 'B612', sans-serif;
     /* background-color: #4287f5; */
-    background-color: #B3000C;
+    min-height: 100vh;
+    background-color: #3f0d12;
+    background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+
+    
 }
 
 body {
     margin: 0;
     padding: 0;
+
 }
 
 
@@ -80,9 +85,10 @@ button {
 
 .loginDiv button {
     display: block;
-    background-color: #B3000C;
     width: 100%;
     margin: 0;
+    background-color: #3f0d12;
+    background-image: linear-gradient(315deg, #3f0d12 0%, #B3000C 74%);
 }
 
 @media only screen and (max-width: 600px) {
